@@ -1,11 +1,5 @@
-from flask import Flask
 from flask_ask import Ask, statement, question, session
-from flask import render_template
-
-
-
-app = Flask(__name__)
-ask = Ask(app, '/pokemon_quest')
+from app import app, ask
 
 
 @ask.launch
@@ -17,7 +11,3 @@ def start_skill():
 @app.route('/')
 def hello_world():
     return 'Hello World!'
-
-
-if __name__ == '__main__':
-    app.run()
