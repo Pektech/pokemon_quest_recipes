@@ -1,0 +1,16 @@
+adding a recipe
+
+fishpie = Recipe(name="fish pie', rating='Basic') #creates recipe
+a = Association(quantity=3) # sets quanity of first ingredient.. sets before ingredient
+a.child = Ingredient(name="fish) #creates ingredient object
+fishpie.ingredients.append(a) #adds ingredient and quatity to recipe
+
+db.session.add(fishpie)
+db.session.commit()
+
+
+iterate through recipe
+
+for item in fishpie.ingredients:
+...     print(item.child.name, item.quantity)
+
